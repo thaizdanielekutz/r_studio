@@ -78,7 +78,32 @@ grafico_coluna_porcent=ggplot(variaveis_categorias_nominais, aes(a_cor_olhos, fi
 
 ggplotly(grafico_coluna_porcent)
 
+#Gráfico de colunas ou barras verticais empilhadas (%)
+grafico_colunas_empilhadas=ggplot(variaveis_categorias_nominais, aes(a_cor_olhos, fill=a_sexo)) +
+  geom_bar(position = "fill")+
+  ggtitle("Número de alunos por cor dos olhos e sexo")+
+  labs(fill="Sexo")+
+  xlab("Cor dos olhos")+
+  ylab("Frequência simples (Quantidade de alunos)")
 
+ggplotly(grafico_colunas_empilhadas)
+
+#Gráfico de barras horizontais
+grafico_barras_horizontais=grafico_coluna +coord_flip()
+
+ggplotly(grafico_barras_horizontais)
+
+
+#Gráfico de barras horizontais por sexo
+grafico_barras_horizontais_por_sexo=grafico_coluna + coord_flip()+ facet_grid(~a_sexo)
+ggplotly(grafico_barras_horizontais)
+
+grid.arrange(grafico_coluna_geral, 
+             grafico_coluna,
+             grafico_coluna_porcent,
+             grafico_barras_horizontais,
+             grafico_barras_horizontais_por_sexo,
+             grafico_colunas_empilhadas, nrow=3, ncol=2)
 
 
 
