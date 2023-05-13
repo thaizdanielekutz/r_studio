@@ -96,7 +96,7 @@ ggplotly(grafico_barras_horizontais)
 
 #Gráfico de barras horizontais por sexo
 grafico_barras_horizontais_por_sexo=grafico_coluna + coord_flip()+ facet_grid(~a_sexo)
-ggplotly(grafico_horizontais_por_sexo)
+ggplotly(grafico_barras_horizontais_por_sexo)
 
 grid.arrange(grafico_coluna_geral, 
              grafico_coluna,
@@ -106,6 +106,8 @@ grid.arrange(grafico_coluna_geral,
              grafico_colunas_empilhadas, nrow=3, ncol=2)
 
 #Estudar Cores
+
+
 
 
 
