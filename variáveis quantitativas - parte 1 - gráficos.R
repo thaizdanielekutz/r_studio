@@ -44,10 +44,29 @@ dados=iris
 grafico_dispersao_cor = ggplot(dados, aes(x=Sepal.Length, y = Petal.Length, col=Species))+
   geom_point(size=4)+
   ggtitle("Gráfico de Dispersão do tamanho da Sépala vs o tamanho das Pétalas das plantas")+
-  xlab("Tamanho das Sépalas")
+  xlab("Tamanho das Sépalas")+
   ylab("Tamanho das Pétalas")
 grafico_dispersao_cor
+
+#Gráfico de dispersão - tamanho
+dados=iris
+grafico_dispersao_tamanho = ggplot(dados, aes(x=Sepal.Length, y = Petal.Length, col=Species))+
+  geom_point (aes(Species))+
+  ggtitle("Gráfico de Dispersão do tamanho da Sépala vs o tamanho das Pétalas das plantas")+
+  xlab("Tamanho das Sépalas")+
+  ylab("Tamanho das Pétalas")
+grafico_dispersao_tamanho
   
+
+#Gráfico de dispersão - por Spécie
+dados=iris
+grafico_dispersao_especie = ggplot(dados, aes(x=Sepal.Length, y = Petal.Length, col=Species))+
+  geom_point (size = 4)+
+  ggtitle("Gráfico de Dispersão do tamanho da Sépala vs o tamanho das Pétalas das plantas")+
+  xlab("Tamanho das Sépalas")+
+  ylab("Tamanho das Pétalas")+
+  facet_wrap(~Species)
+grafico_dispersao_especie
   
 
 
