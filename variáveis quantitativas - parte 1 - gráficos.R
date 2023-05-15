@@ -67,6 +67,7 @@ grafico_dispersao_especie = ggplot(dados, aes(x=Sepal.Length, y = Petal.Length, 
   ylab("Tamanho das Pétalas")+
   facet_wrap(~Species)
 grafico_dispersao_especie
+
   
 
 
