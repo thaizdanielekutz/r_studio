@@ -68,9 +68,24 @@ grafico_dispersao_especie = ggplot(dados, aes(x=Sepal.Length, y = Petal.Length, 
   facet_wrap(~Species)
 grafico_dispersao_especie
 
-  
+#Gráfico de linhas do desemprego nos Estados Unidos de 1967 a 2015 - Economics
+dados2=economics
+grafico_linhas = ggplot(economics, aes(x=date, y=unemploy))+
+  geom_line(col="red")+
+  xlab("Ano")+
+  ylab("Desemprego (em milhares)")+
+  ggtitle("Desemprego nos Estados Unidos de 1967 a 2015 - Economics")
+grafico_linhas
 
-
+#Agrupando os gráficos na mesma janela com ggplot2
+grid.arrange(
+  grafico_hist,
+  grafico_boxplot,
+  grafico_dispersao_cor,
+  grafico_dispersao_tamanho,
+  grafico_dispersao_especie,
+  grafico_linhas,
+  nrow=3, ncol=2)
 
 
 
