@@ -19,7 +19,7 @@ grafico_hist = ggplot(dados, aes(x=Sepal.Length))+
 grafico_hist
 ggplotly(grafico_hist)
 
-#Gráfico histograma por espécie
+
 #Gráfico Box-Plot
 dados=iris
 grafico_boxplot = ggplot(dados, aes(x=Sepal.Length, y=Petal.Length, fill=Species))+
@@ -79,7 +79,9 @@ grid.arrange(
   nrow=3, ncol=2)
 
 
+require(esquisse)
 
+esquisser(viewer = "browser")
 
 
 
